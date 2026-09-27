@@ -852,5 +852,74 @@ export interface StaffLeaveQuotaSummary {
   totalLeavesCount: number; // Tổng số đơn
 }
 
+export interface DailySchedule {
+  dayOfWeek: string; // 'HAI', 'BA', 'TƯ', 'NĂM', 'SÁU', 'BẢY', 'CN'
+  date: string; // '28/9/2026'
+  morningContent: string;
+  afternoonContent: string;
+  leadership: string;
+}
+
+export interface WeeklyWorkSchedule {
+  id: string;
+  weekNumber: number; // e.g. 4
+  schoolYear: string; // e.g. "2026 - 2027"
+  fromDate: string; // e.g. "28/9/2026"
+  toDate: string; // e.g. "04/10/2026"
+  dutyClass: string; // e.g. "10A4"
+  dutyTeacher: string; // e.g. "Trần Quang Vinh"
+  principalName: string; // e.g. "Tạ Duy Kiên"
+  issueDate: string; // e.g. "Cẩm Khê, ngày 28 tháng 9 năm 2026"
+  notes: string[];
+  days: DailySchedule[];
+  updatedAt?: string;
+}
+
+export interface DepartmentTaskDay {
+  dayOfWeek: string; // 'Thứ Hai', 'Thứ Ba', ...
+  date: string; // '28/9/2026'
+  morningContent: string;
+  afternoonContent: string;
+  completionDate: string; // 'Ngày hoàn thành'
+  leadershipReview: string;
+  note: string;
+}
+
+export interface DepartmentWorkSchedule {
+  id: string;
+  schoolName: string; // 'TRƯỜNG THPT SƠN LƯƠNG'
+  departmentName: string; // 'Tổ Toán - Lí - Tin'
+  weekNumber: number; // e.g. 4
+  fromDate: string; // '28/9/2026'
+  toDate: string; // '04/10/2026'
+  month: number; // 9
+  year: number; // 2026
+  days: DepartmentTaskDay[];
+  updatedAt?: string;
+}
+
+export interface SchoolTaskDay {
+  dayOfWeek: string; // 'Thứ Hai', 'Thứ Ba', ...
+  date: string; // '28/9/2026'
+  morningContent: string;
+  afternoonContent: string;
+  completionDate: string; // 'Ngày hoàn thành'
+  leadershipReview: string;
+  note: string;
+}
+
+export interface SchoolWorkSchedule {
+  id: string;
+  schoolName: string; // 'TRƯỜNG THPT SƠN LƯƠNG'
+  titleName: string; // 'BGH GIAO VIỆC TOÀN TRƯỜNG' or target department/unit
+  weekNumber: number; // e.g. 4
+  fromDate: string; // '28/9/2026'
+  toDate: string; // '04/10/2026'
+  month: number; // 9
+  year: number; // 2026
+  days: SchoolTaskDay[];
+  updatedAt?: string;
+}
+
 
 

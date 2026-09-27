@@ -21,6 +21,7 @@ import {
   X,
   Palette,
   CalendarDays,
+  Calendar,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -159,11 +160,34 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       roles: ['bgh', 'giaovien', 'nhanvien'],
     },
     {
+      id: 'lich-cong-tac',
+      label: 'Lịch công tác tuần',
+      icon: CalendarDays,
+      roles: ['bgh', 'giaovien', 'nhanvien'],
+      badge: 'Tuần 4',
+      sectionHeader: 'LỊCH CÔNG TÁC & HOẠT ĐỘNG',
+    },
+    {
+      id: 'school-work-schedule',
+      label: 'Lịch giao việc nhà trường',
+      icon: Calendar,
+      roles: ['bgh', 'giaovien', 'nhanvien'],
+      badge: 'Cấp trường',
+    },
+    {
+      id: 'dept-work-schedule',
+      label: 'Lịch giao việc tổ chuyên môn',
+      icon: Building2,
+      roles: ['bgh', 'giaovien', 'nhanvien'],
+      badge: 'Tổ CM',
+    },
+    {
       id: 'bgh',
       label: 'KPI Cán bộ Quản lý',
       icon: Award,
       roles: ['bgh'],
       badge: `${bghEvalCount} phiếu`,
+      sectionHeader: 'KPI & THI ĐUA NỘI BỘ',
     },
     {
       id: 'giaovien',

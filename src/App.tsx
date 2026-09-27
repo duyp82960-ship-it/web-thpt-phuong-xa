@@ -16,6 +16,9 @@ import { PrintModal } from './components/PrintModal';
 import { ToastContainer } from './components/Toast';
 import { UiSettingsView } from './components/UiSettingsView';
 import { LeaveManagementView } from './components/LeaveManagementView';
+import { WorkScheduleView } from './components/WorkScheduleView';
+import { DepartmentWorkScheduleView } from './components/DepartmentWorkScheduleView';
+import { SchoolWorkScheduleView } from './components/SchoolWorkScheduleView';
 import { School, MapPin, Phone, Mail, Award, ShieldCheck } from 'lucide-react';
 
 const MainContent: React.FC = () => {
@@ -61,6 +64,15 @@ const MainContent: React.FC = () => {
       case 'leave-management':
       case 'nghi-phep':
         return <LeaveManagementView />;
+      case 'lich-cong-tac':
+      case 'work-schedule':
+        return <WorkScheduleView />;
+      case 'school-work-schedule':
+      case 'lich-giao-viec-truong':
+        return <SchoolWorkScheduleView />;
+      case 'dept-work-schedule':
+      case 'lich-giao-viec':
+        return <DepartmentWorkScheduleView />;
       case 'kpi-evaluation':
         return <KpiEvaluationSheet />;
       case 'reports':

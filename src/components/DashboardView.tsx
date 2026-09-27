@@ -257,7 +257,36 @@ export const DashboardView: React.FC = () => {
       <div className="flex-1 min-h-[140px] sm:min-h-[220px]" />
 
       {/* 4. BOTTOM DOCK: CÁC MODULE XUẤT HIỆN TẠI PHÍA DƯỚI GIAO DIỆN TRANG CHỦ */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto space-y-2.5 pt-4">
+      <div className="relative z-10 w-full max-w-7xl mx-auto space-y-3 pt-4">
+        {/* Featured Work Schedule Quick Banner */}
+        <div
+          onClick={() => setActiveTab('lich-cong-tac')}
+          className="bg-gradient-to-r from-blue-900/95 via-indigo-900/95 to-blue-800/95 backdrop-blur-md border border-cyan-400/50 rounded-2xl p-3.5 sm:p-4 text-white shadow-2xl cursor-pointer hover:scale-[1.01] transition-all flex items-center justify-between gap-4 group"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-3 rounded-xl bg-cyan-500/25 text-cyan-300 border border-cyan-400/40 group-hover:bg-cyan-500/35 transition">
+              <CalendarDays className="w-6 h-6 animate-pulse" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="bg-red-600 text-white font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider animate-bounce">
+                  ⚡ Mới nhất
+                </span>
+                <h3 className="font-black text-sm sm:text-base tracking-tight text-white uppercase">
+                  Lịch Công Tác Tuần 4 (28/9 - 04/10/2026) - Trường THPT Phương Xá
+                </h3>
+              </div>
+              <p className="text-xs text-blue-200 mt-0.5">
+                Trực tuần: Lớp 10A4 • GV: Trần Quang Vinh • Xem chi tiết lịch sáng, chiều & phân công lãnh đạo trực
+              </p>
+            </div>
+          </div>
+          <div className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-400 text-slate-950 font-black text-xs shadow-md group-hover:bg-cyan-300 transition shrink-0">
+            <span>Xem Lịch Ngay</span>
+            <ChevronRight className="w-4 h-4" />
+          </div>
+        </div>
+
         {/* SECTION 1: CÁC MODULE CHỨC NĂNG CHÍNH */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-between px-1">

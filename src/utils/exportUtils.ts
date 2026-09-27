@@ -708,4 +708,239 @@ export function exportKpiEvaluationToWord(params: {
   URL.revokeObjectURL(url);
 }
 
+export function downloadDeptScheduleTemplateExcel() {
+  const templateData = [
+    {
+      'Thứ': 'Thứ Hai',
+      'Ngày': '28/9/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt chuyên môn tổ: Triển khai kế hoạch tuần.',
+      'Chiều (Nội dung công việc)': 'Lên lớp theo thời khóa biểu.',
+      'Ngày hoàn thành': '28/09/2026',
+      'Lãnh đạo trực/đánh giá': 'Tổ trưởng trực',
+      'Ghi chú': 'Nộp báo cáo',
+    },
+    {
+      'Thứ': 'Thứ Ba',
+      'Ngày': '29/9/2026',
+      'Sáng (Nội dung công việc)': 'Dự giờ thăm lớp.',
+      'Chiều (Nội dung công việc)': 'Họp nhóm chuyên môn.',
+      'Ngày hoàn thành': '29/09/2026',
+      'Lãnh đạo trực/đánh giá': 'P.HT dự giờ',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Tư',
+      'Ngày': '30/9/2026',
+      'Sáng (Nội dung công việc)': 'Kiểm tra thiết bị phòng thực hành.',
+      'Chiều (Nội dung công việc)': 'Lên lớp theo TKB.',
+      'Ngày hoàn thành': '30/09/2026',
+      'Lãnh đạo trực/đánh giá': 'Tổ trưởng trực',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Năm',
+      'Ngày': '01/10/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt nhóm chuyên môn.',
+      'Chiều (Nội dung công việc)': 'Bồi dưỡng học sinh giỏi.',
+      'Ngày hoàn thành': '01/10/2026',
+      'Lãnh đạo trực/đánh giá': 'Tổ trưởng duyệt',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Sáu',
+      'Ngày': '02/10/2026',
+      'Sáng (Nội dung công việc)': 'Họp giao ban toàn trường.',
+      'Chiều (Nội dung công việc)': 'Chấm bài kiểm tra, nhập điểm.',
+      'Ngày hoàn thành': '02/10/2026',
+      'Lãnh đạo trực/đánh giá': 'BGH duyệt',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Bảy',
+      'Ngày': '03/10/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt chuyên đề phương pháp dạy học.',
+      'Chiều (Nội dung công việc)': 'Vệ sinh phòng bộ môn.',
+      'Ngày hoàn thành': '03/10/2026',
+      'Lãnh đạo trực/đánh giá': 'Tổ trưởng kiểm tra',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Chủ Nhật',
+      'Ngày': '04/10/2026',
+      'Sáng (Nội dung công việc)': 'Nghỉ ngơi.',
+      'Chiều (Nội dung công việc)': 'Nghỉ.',
+      'Ngày hoàn thành': '04/10/2026',
+      'Lãnh đạo trực/đánh giá': '-',
+      'Ghi chú': '',
+    },
+  ];
+
+  const ws = XLSX.utils.json_to_sheet(templateData);
+  ws['!cols'] = [
+    { wch: 15 },
+    { wch: 15 },
+    { wch: 35 },
+    { wch: 35 },
+    { wch: 20 },
+    { wch: 25 },
+    { wch: 20 },
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Mau_Lich_Giao_Viec');
+  XLSX.writeFile(wb, 'Mau_Lich_Giao_Viec_To_Chuyen_Mon.xlsx');
+}
+
+export function downloadSchoolScheduleTemplateExcel() {
+  const templateData = [
+    {
+      'Thứ': 'Thứ Hai',
+      'Ngày': '28/9/2026',
+      'Sáng (Nội dung công việc)': 'Chào cờ toàn trường, triển khai công tác tuần.',
+      'Chiều (Nội dung công việc)': 'Họp giao ban BGH & Các Trưởng bộ phận.',
+      'Ngày hoàn thành': '28/09/2026',
+      'Lãnh đạo trực/đánh giá': 'Hiệu trưởng chỉ đạo',
+      'Ghi chú': 'Toàn trường tham dự',
+    },
+    {
+      'Thứ': 'Thứ Ba',
+      'Ngày': '29/9/2026',
+      'Sáng (Nội dung công việc)': 'BGH kiểm tra nề nếp dạy và học.',
+      'Chiều (Nội dung công việc)': 'Kiểm tra cơ sở vật chất phòng học.',
+      'Ngày hoàn thành': '29/09/2026',
+      'Lãnh đạo trực/đánh giá': 'P.Hiệu trưởng trực',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Tư',
+      'Ngày': '30/9/2026',
+      'Sáng (Nội dung công việc)': 'Dự giờ đột xuất môn học khối 10.',
+      'Chiều (Nội dung công việc)': 'Họp Hội đồng thi đua khen thưởng.',
+      'Ngày hoàn thành': '30/09/2026',
+      'Lãnh đạo trực/đánh giá': 'P.Hiệu trưởng chủ trì',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Năm',
+      'Ngày': '01/10/2026',
+      'Sáng (Nội dung công việc)': 'Kiểm tra công tác quản lý tài chính quý 3.',
+      'Chiều (Nội dung công việc)': 'Thao giảng toàn trường.',
+      'Ngày hoàn thành': '01/10/2026',
+      'Lãnh đạo trực/đánh giá': 'Hiệu trưởng kiểm tra',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Thứ Sáu',
+      'Ngày': '02/10/2026',
+      'Sáng (Nội dung công việc)': 'Họp giao ban toàn trường tiết 1+2.',
+      'Chiều (Nội dung công việc)': 'Chấm bài kiểm tra, nhập điểm.',
+      'Ngày hoàn thành': '02/10/2026',
+      'Lãnh đạo trực/đánh giá': 'BGH duyệt',
+      'Ghi chú': 'Nhập điểm đúng hạn',
+    },
+    {
+      'Thứ': 'Thứ Bảy',
+      'Ngày': '03/10/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt ngoại khóa an toàn giao thông.',
+      'Chiều (Nội dung công việc)': 'Tổng vệ sinh toàn trường.',
+      'Ngày hoàn thành': '03/10/2026',
+      'Lãnh đạo trực/đánh giá': 'Lãnh đạo trực ban',
+      'Ghi chú': '',
+    },
+    {
+      'Thứ': 'Chủ Nhật',
+      'Ngày': '04/10/2026',
+      'Sáng (Nội dung công việc)': 'Trực ban nhà trường.',
+      'Chiều (Nội dung công việc)': 'Trực ban nhà trường.',
+      'Ngày hoàn thành': '04/10/2026',
+      'Lãnh đạo trực/đánh giá': 'Bảo vệ & Lãnh đạo trực',
+      'Ghi chú': '',
+    },
+  ];
+
+  const ws = XLSX.utils.json_to_sheet(templateData);
+  ws['!cols'] = [
+    { wch: 15 },
+    { wch: 15 },
+    { wch: 35 },
+    { wch: 35 },
+    { wch: 20 },
+    { wch: 25 },
+    { wch: 20 },
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Lich_Giao_Viec_Nha_Truong');
+  XLSX.writeFile(wb, 'Mau_Lich_Giao_Viec_Nha_Truong.xlsx');
+}
+
+export function downloadWeeklyWorkScheduleTemplateExcel() {
+  const templateData = [
+    {
+      'Thứ': 'HAI',
+      'Ngày': '28/9/2026',
+      'Sáng (Nội dung công việc)': 'Chào cờ toàn trường tiết 1. BGH họp giao ban đầu tuần.',
+      'Chiều (Nội dung công việc)': 'Họp sinh hoạt chuyên môn các tổ.',
+      'Trực lãnh đạo': 'Thầy Kiên (HT)',
+    },
+    {
+      'Thứ': 'BA',
+      'Ngày': '29/9/2026',
+      'Sáng (Nội dung công việc)': 'Dự giờ thăm lớp giáo viên trẻ khối 12.',
+      'Chiều (Nội dung công việc)': 'Bồi dưỡng học sinh giỏi các môn văn hóa.',
+      'Trực lãnh đạo': 'Cô Hà (P.HT)',
+    },
+    {
+      'Thứ': 'TƯ',
+      'Ngày': '30/9/2026',
+      'Sáng (Nội dung công việc)': 'Kiểm tra công tác vệ sinh trường học & phòng thực hành.',
+      'Chiều (Nội dung công việc)': 'Lên lớp dạy học theo thời khóa biểu.',
+      'Trực lãnh đạo': 'Thầy Hùng (P.HT)',
+    },
+    {
+      'Thứ': 'NĂM',
+      'Ngày': '01/10/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt chuyên đề nâng cao chất lượng thi tốt nghiệp THPT.',
+      'Chiều (Nội dung công việc)': 'Hoạt động trải nghiệm hướng nghiệp khối 10, 11.',
+      'Trực lãnh đạo': 'Thầy Kiên (HT)',
+    },
+    {
+      'Thứ': 'SÁU',
+      'Ngày': '02/10/2026',
+      'Sáng (Nội dung công việc)': 'Họp Hội đồng giáo dục trường tiết 1+2.',
+      'Chiều (Nội dung công việc)': 'Chấm bài kiểm tra định kỳ, nhập điểm hệ thống CSDL.',
+      'Trực lãnh đạo': 'Cô Hà (P.HT)',
+    },
+    {
+      'Thứ': 'BẢY',
+      'Ngày': '03/10/2026',
+      'Sáng (Nội dung công việc)': 'Sinh hoạt Câu lạc bộ TDTT, Nghệ thuật.',
+      'Chiều (Nội dung công việc)': 'Lao động vệ sinh khuôn viên trường.',
+      'Trực lãnh đạo': 'Thầy Hùng (P.HT)',
+    },
+    {
+      'Thứ': 'CN',
+      'Ngày': '04/10/2026',
+      'Sáng (Nội dung công việc)': 'Nghỉ.',
+      'Chiều (Nội dung công việc)': 'Nghỉ.',
+      'Trực lãnh đạo': 'Bảo vệ trực',
+    },
+  ];
+
+  const ws = XLSX.utils.json_to_sheet(templateData);
+  ws['!cols'] = [
+    { wch: 12 },
+    { wch: 15 },
+    { wch: 40 },
+    { wch: 40 },
+    { wch: 25 },
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Lich_Cong_Tac_Tuan');
+  XLSX.writeFile(wb, 'Mau_Lich_Cong_Tac_Tuan.xlsx');
+}
+
+
+
 
